@@ -25,7 +25,6 @@ def redirect():
         return 'u'
     
     return direction
-
 def draw_polygon(color, r, d, eye_level):
         ps, p = snake_size, pygame
         #right includes left, and down includes up using negitive numbers
