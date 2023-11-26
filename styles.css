@@ -1,0 +1,15 @@
+body {
+    justify-content: center;
+    text-align: center;
+    display: flex;
+}
+.table {
+    border: 2px solid rgb(128, 128, 128);
+    /* margin: 20px; */
+    /* border-spacing: 20px; */
+}
+.table th {
+    padding: 10px;
+    border: 2px solid grey;
+    background-color: grey;
+}
