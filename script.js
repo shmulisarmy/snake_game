@@ -23,7 +23,10 @@ function move_snake(){
     console.log(direction);
     var mo = player.length-1;
     if (direction == 'right' && player[mo][1] < table_size-1){
-        // player[-1][1]++;
+
+        if ([player[mo][0], player[mo][1] + 1] in player){
+            window.alert('you lose');
+        }
         player.push([player[mo][0], player[mo][1] + 1]);
         table.rows[player[mo][0]].cells[player[mo][1]].style.backgroundColor = 'green';
         if (apple){
@@ -31,7 +34,10 @@ function move_snake(){
         } else {table.rows[player[0][0]].cells[player[0][1]].style.backgroundColor = 'grey';
         player.shift();}
     }  if (direction == 'left' && player[mo][1] > 0){
-        // player[-1][1]--;
+
+        if ([player[mo][0], player[mo][1] - 1] in player){
+            window.alert('you lose');
+        }
         player.push([player[mo][0], player[mo][1] - 1]);
         table.rows[player[mo][0]].cells[player[mo][1]].style.backgroundColor = 'green';
         if (apple){
@@ -39,7 +45,10 @@ function move_snake(){
         } else {table.rows[player[0][0]].cells[player[0][1]].style.backgroundColor = 'grey';
         player.shift();}
     }  if (direction == 'down' && player[mo][0] < table_size-1){
-        // player[-1][0]++;
+
+        if ([player[mo][0] + 1, player[mo][1]] in player){
+            window.alert('you lose');
+        }
         player.push([player[mo][0] + 1, player[mo][1]]);
         table.rows[player[mo][0]].cells[player[mo][1]].style.backgroundColor = 'green';
         if (apple){
@@ -47,7 +56,10 @@ function move_snake(){
         } else {table.rows[player[0][0]].cells[player[0][1]].style.backgroundColor = 'grey';
         player.shift();}
     }  if (direction == 'up' && player[mo][0] > 0){
-        // player[-1][0]--;
+
+        if ([player[mo][0] - 1, player[mo][1]] in player){
+            window.alert('you lose');
+        }
         player.push([player[mo][0] - 1, player[mo][1]]);
         table.rows[player[mo][0]].cells[player[mo][1]].style.backgroundColor = 'green';
         if (apple){
@@ -55,9 +67,9 @@ function move_snake(){
         } else {table.rows[player[0][0]].cells[player[0][1]].style.backgroundColor = 'grey';
         player.shift();}
     }
-    // for (const element of player) {
-    //     table.rows[element[0]].cells[element[1]].style.backgroundColor = 'green';
-    };//};
+    if (!-(1 < player[mo][0] < table_size))
+    window.alert('you lose');
+    };
     
 
 
@@ -89,3 +101,7 @@ window.addEventListener('keydown', key => {
 
 
 setInterval(move_snake, 180);
+
+       if (!letters_enetered.includes(letter)){ letters_enetered.push(letter);
+    }
+   
