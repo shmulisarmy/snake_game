@@ -111,3 +111,5 @@ while True:
     pygame.draw.rect(window, (255, 0, time%50), apple)
     pygame.display.update()
  
+
+ 
